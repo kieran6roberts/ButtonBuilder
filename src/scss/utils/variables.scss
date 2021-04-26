@@ -1,0 +1,63 @@
+:root {
+  --color-primary: #c0e39d;
+  --color-secondary: #9de3e3;
+  --color-tertiary: #c29de3;
+  --color-hover-primary: #c0e39d;
+  --color-hover-secondary: #9de3e3;
+  --color-hover-tertiary: #c29de3;
+  --color-bg: #ffffff;
+  --color-off-bg: #f3f1f1;
+  --color-text: #000000;
+  --color-off-text: hsl(0, 0%, 25%);
+
+  --text-base: 0.8rem;
+  --text-scale: 1.2;
+
+  --text-xs: clamp(
+    calc(var(--text-base) * var(--text-scale)),
+    1.2vw,
+    calc(var(--text-base) * var(--text-scale) * 2)
+  );
+  --text-sm: clamp(
+    calc(var(--text-xs) * var(--text-scale)),
+    1.5vw,
+    calc(var(--text-xs) * var(--text-scale) * 2.4)
+  );
+  --text-md: clamp(
+    calc(var(--text-sm) * var(--text-scale)),
+    2.3vw,
+    calc(var(--text-sm) * var(--text-scale) * 2.8)
+  );
+  --text-lg: clamp(
+    calc(var(--text-md) * var(--text-scale)),
+    3.2vw,
+    calc(var(--text-md) * var(--text-scale) * 3.5)
+  );
+  --text-xl: clamp(
+    calc(var(--text-lg) * var(--text-scale)),
+    4vw,
+    calc(var(--text-lg) * var(--text-scale) * 5)
+  );
+
+  --border-radius-full: 0.8rem;
+  --border-radius-half: 0.4rem;
+  --border-thick-primary: 4px solid var(--color-primary);
+  --border-thin-primary: 2px solid var(--color-primary);
+  --border-thick-secondary: 4px solid var(--color-primary);
+  --border-thin-secondary: 2px solid var(--color-primary);
+  --border-thick-tertiary: 4px solid var(--color-primary);
+  --border-thin-tertiary: 2px solid var(--color-primary);
+
+  --space-scale: 1em;
+  --space-3xs: calc(0.25 * var(--space-scale));
+  --space-2xs: calc(0.375 * var(--space-scale));
+  --space-xs: calc(0.5 * var(--space-scale));
+  --space-sm: calc(0.75 * var(--space-scale));
+  --space-md: calc(1 * var(--space-scale));
+  --space-lg: calc(1.25 * var(--space-scale));
+  --space-xl: calc(3.25 * var(--space-scale));
+  --space-2xl: calc(5.25 * var(--space-scale));
+  --space-3xl: calc(10 * var(--space-scale));
+
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

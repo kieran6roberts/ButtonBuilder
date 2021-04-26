@@ -1,0 +1,26 @@
+@import "../utils/variables.scss";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  border: 0 none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  font-family: var(--font);
+}
+
+p,
+a,
+span {
+  font-size: var(--text-sm);
+}
