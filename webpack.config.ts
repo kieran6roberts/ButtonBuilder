@@ -67,7 +67,7 @@ const config: WebpackConfiguration = {
             }
         }),
         new HtmlWebpackPlugin({
-            //favicon: "src/favicon.ico",
+            favicon: "./public/favicon.ico",
             template: path.resolve(__dirname, "src/index.html")
         }),
         new MiniCssExtractPlugin({

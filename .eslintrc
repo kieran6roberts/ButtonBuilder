@@ -22,6 +22,7 @@
         }
     },
     "rules": {
+        "react/prop-types": "off",
         "no-global-assign": "error",
         "@typescript-eslint/explicit-function-return-type": [
             "off"
