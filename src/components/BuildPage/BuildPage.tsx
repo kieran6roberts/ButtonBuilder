@@ -3,7 +3,14 @@ import Layout from "../Layout/Layout";
 
 const BuildPage = () => (
     <Layout>
-        Build Page
+        <section className="build">
+            <div className="build__container">
+                <div className="build__output"></div>
+                <div className="build__editor">
+                    <h2 className="build__editor-heading">Editor</h2>
+                </div>
+            </div>
+        </section>
     </Layout>
 )
 

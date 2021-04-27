@@ -1,1 +1,25 @@
 @import "../layout/index.scss";
+
+.build {
+  &__container {
+    height: 700px;
+
+    @media only screen and (min-width: "900px") {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      height: 350px;
+    }
+  }
+
+  &__editor,
+  &__output {
+    border: var(--border-thick-primary);
+    height: 100%;
+  }
+
+  &__editor-heading {
+    font-weight: 500;
+    margin-top: var(--space-xs);
+    text-align: center;
+  }
+}

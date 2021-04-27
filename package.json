@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack --mode development",
-    "start": "webpack serve --open Firefox",
+    "start": "webpack serve --config webpack.config.ts --open Firefox",
     "build": "webpack --mode production",
     "lint:fix": "eslint --fix \"src/**/*.js\"",
     "test": "jest --config ./jest.config.js",

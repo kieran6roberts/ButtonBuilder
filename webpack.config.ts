@@ -15,12 +15,15 @@ interface WebpackConfiguration extends webpack.Configuration {
 
 const config: WebpackConfiguration = {
     devServer: {
-        contentBase: path.resolve(__dirname, "dist"),
+        contentBase: "./dist",
         compress: true,
         https: false,
+        hot: true,
+        historyApiFallback: true,
         overlay: true,
         port: 9000,
-        stats: "minimal"
+        stats: "minimal",
+        writeToDisk: true
     },
     entry: { index: path.resolve(__dirname, "src", "index.tsx") },
     mode: "development",
@@ -56,9 +59,9 @@ const config: WebpackConfiguration = {
         extensions: [".tsx", ".ts", ".js", ".jsx"]
     },
     output: {
-        filename: "[name].[contenthash].js",
+        filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: "/"
+        publicPath: "./"
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({
@@ -77,7 +80,7 @@ const config: WebpackConfiguration = {
         }),
         new CopyPlugin({
             patterns: [
-                {from: "public/"}
+                { from: "public/" }
             ]
         }),
         new CleanWebpackPlugin({
