@@ -17,24 +17,16 @@ interface EditorProps {
 class Editor extends React.Component<EditorProps, EditorState> {
     constructor(props) {
         super(props);
-
-        this.state = {
-            buttonStyle: {
-                color: "fff"
-            }
-        }
     }
 
-    handleBackgroundColorChange(color: { hex: string }) {
-        this.props.dispatch(buildActions.changeButtonBackground(this.state.buttonStyle))
-        this.setState({
-            ...this.state.buttonStyle,
-            buttonStyle: {
-                color: color.hex
-            }
-        })
+    componentDidMount() {
+        this.props.dispatch(buildActions.changeButtonBackground({ color: "fff"}))
 
-        console.log(this.state.buttonStyle)
+    }
+
+    handleBackgroundColorChange(color: { hex: string }, { target }) {
+        const newColor = target.title || target.value;
+        this.props.dispatch(buildActions.changeButtonBackground({ color: newColor }));
     }
 
     render() {
@@ -42,7 +34,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
             <div className="editor">
                 <h3>Pick a background color</h3>
                 <TwitterPicker 
-                color={this.state.buttonStyle.color} 
+                color={this.props.color} 
                 onChangeComplete={this.handleBackgroundColorChange.bind(this)} 
                 />
                 <p>{this.props.color}</p>
@@ -52,8 +44,9 @@ class Editor extends React.Component<EditorProps, EditorState> {
 }
 
 function mapStateToProps(state) {
+    console.log(state)
     return {
-        color: state.color
+        color: state?.buildReducer?.color?.color
     }
 }
 
