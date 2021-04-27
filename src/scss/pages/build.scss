@@ -1,4 +1,6 @@
 @import "../layout/index.scss";
+@import "../components/button.scss";
+@import "../components/editor.scss";
 
 .build {
   &__container {
@@ -13,8 +15,14 @@
 
   &__editor,
   &__output {
-    border: var(--border-thick-primary);
+    border: var(--border-thin-primary);
     height: 100%;
+  }
+
+  &__output {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   &__editor-heading {

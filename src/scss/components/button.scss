@@ -1,0 +1,8 @@
+.button-output {
+  background-color: var(--color-bg);
+  font-size: var(--text-md);
+  cursor: pointer;
+  border: var(--border-thin-tertiary);
+  padding: var(--space-xs) var(--space-md);
+  text-transform: capitalize;
+}

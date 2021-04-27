@@ -4,7 +4,7 @@ import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 
 import { composeWithDevTools } from "redux-devtools-extension";
 
-type InitialStoreState = () => unknown;
+type InitialStoreState = any;
 
 const configureStore = (initialState?: InitialStoreState) => createStore(
     rootReducer, 
