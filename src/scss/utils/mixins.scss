@@ -1,0 +1,32 @@
+// links
+@mixin link-common {
+  border-radius: var(--border-radius-half);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-md);
+  text-transform: capitalize;
+}
+
+@mixin link-primary {
+  background-color: var(--color-primary);
+  border: var(--border-thin-primary);
+  color: var(--color-bg);
+  &:hover {
+    background-color: var(--color-hover-primary);
+  }
+}
+
+@mixin link-secondary {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+@mixin link-primary-hover {
+  background-color: var(--color-off-bg);
+}
+
+@mixin link-secondary-hover {
+  background-color: var(--color-off-bg);
+}

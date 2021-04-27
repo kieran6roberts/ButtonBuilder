@@ -16,9 +16,10 @@ const mainNavLinks = [
 const Nav = () => (
     <nav className="nav">
         <div className="nav__brand">
-            <Link to="/">
-                <img alt="" height="50px" src="android-chrome-192x192.png" width="50px" />
-                <span className="nav__title" >Button Builder</span>
+            <Link className="nav__brand-link" to="/">
+                <img alt="" className="nav__brand-logo" height="40px" src="android-chrome-192x192.png" width="40px" />
+                <span className="nav__brand-title" >Button Builder</span>
+                <span className="nav__brand-name">By Kieran Roberts</span>
             </Link>
         </div>
         <div className="nav__links-wrapper">

@@ -22,5 +22,9 @@ html {
 p,
 a,
 span {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
+}
+
+a {
+  text-decoration: none;
 }

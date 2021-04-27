@@ -1,4 +1,50 @@
+@use "../utils/mixins.scss" as m;
+@import "../components/nav-links.scss";
+
 .nav {
   display: flex;
   justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+
+  &__brand-link {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__brand-logo {
+    grid-row: span 2;
+  }
+
+  &__brand-title,
+  &__brand-name {
+    display: none;
+    visibility: hidden;
+    @media only screen and (min-width: "768px") {
+      display: inline-block;
+      visibility: visible;
+    }
+  }
+
+  &__brand-title {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  &__brand-name {
+    color: var(--color-primary);
+    font-size: 0.7em;
+  }
+
+  .links {
+    display: flex;
+
+    &__item:last-of-type {
+      margin-left: var(--space-lg);
+    }
+
+    &__link {
+      @include m.link-secondary;
+    }
+  }
 }

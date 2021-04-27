@@ -1,0 +1,13 @@
+@use "../utils/mixins.scss" as m;
+
+.links {
+  &__item {
+    color: var(--color-bg);
+    content: "*";
+    padding: var(--space-xs) 0;
+  }
+
+  &__link {
+    @include m.link-common;
+  }
+}

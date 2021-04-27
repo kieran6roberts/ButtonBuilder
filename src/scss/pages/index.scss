@@ -1,1 +1,40 @@
+@use "../utils/mixins.scss" as m;
 @import "../layout/index.scss";
+
+.home {
+  &__main-heading,
+  &__secondary-heading {
+    text-align: center;
+  }
+
+  &__main-heading {
+    font-size: var(--text-xl);
+
+    &--sec,
+    &--ter {
+      font-size: 1em;
+    }
+
+    &--sec {
+      color: var(--color-secondary);
+    }
+
+    &--ter {
+      color: var(--color-tertiary);
+    }
+  }
+
+  &__secondary-heading {
+    font-size: var(--text-md);
+    font-weight: 600;
+    margin: var(--space-xs) 0 var(--space-lg);
+  }
+
+  &__cta {
+    @include m.link-common;
+    @include m.link-primary;
+    display: block;
+    width: max-content;
+    margin: auto;
+  }
+}

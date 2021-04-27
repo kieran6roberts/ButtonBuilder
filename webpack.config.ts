@@ -1,6 +1,7 @@
 import * as webpack from "webpack";
 import * as webpackDevServer from "webpack-dev-server";
 
+import CopyPlugin from "copy-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -73,6 +74,11 @@ const config: WebpackConfiguration = {
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[name].[contenthash].css"
+        }),
+        new CopyPlugin({
+            patterns: [
+                {from: "public/"}
+            ]
         }),
         new CleanWebpackPlugin({
             verbose: true

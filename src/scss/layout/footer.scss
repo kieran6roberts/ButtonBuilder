@@ -1,0 +1,31 @@
+.footer {
+  padding: var(--space-sm) var(--space-md);
+
+  &__me {
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  &__me-link {
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__me--twitter {
+    color: var(--color-primary);
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+
+    &__link {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+  }
+}

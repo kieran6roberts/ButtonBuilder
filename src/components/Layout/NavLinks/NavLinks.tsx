@@ -11,7 +11,7 @@ const NavLinks = ({ links }: NavLinkProps) => (
     <ul className="links">
         {links.map(({href, text}) => (
             <li className="links__item" key={uuid()}>
-                <Link to={href}>
+                <Link className="links__link" to={href}>
                     {text}
                 </Link>
             </li>
