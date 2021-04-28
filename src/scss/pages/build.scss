@@ -38,10 +38,18 @@
   &__output-save {
     align-self: flex-end;
     justify-self: center;
+    width: 10rem;
     @include m.link-common;
     @include m.link-primary;
+
     &:hover {
       @include m.link-primary-hover;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: var(--color-hover-primary);
+      opacity: 0.3;
     }
   }
 
