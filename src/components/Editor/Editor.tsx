@@ -3,11 +3,6 @@ import { connect } from "react-redux";
 import { TwitterPicker } from "react-color";
 import * as buildActions from "../../redux/actions/buildActions";
 
-interface EditorState {
-    buttonStyle: {
-        color: string;
-    }
-}
 
 interface EditorProps {
     color: string;
@@ -15,7 +10,7 @@ interface EditorProps {
     updateBackgroundColor: (color: string) => void;
 }
 
-class Editor extends React.Component<EditorProps, EditorState> {
+class Editor extends React.Component<EditorProps> {
     constructor(props) {
         super(props);
     }
