@@ -11,7 +11,8 @@ interface EditorState {
 
 interface EditorProps {
     color: string;
-    dispatch: (input: any) => void;
+    dispatch?: (input: any) => void;
+    updateBackgroundColor: (color: string) => void;
 }
 
 class Editor extends React.Component<EditorProps, EditorState> {
@@ -20,34 +21,36 @@ class Editor extends React.Component<EditorProps, EditorState> {
     }
 
     componentDidMount() {
-        this.props.dispatch(buildActions.changeButtonBackground({ color: "fff"}))
-
+        this.props.updateBackgroundColor(this.props.color ?? "fff");
     }
 
-    handleBackgroundColorChange(color: { hex: string }, { target }) {
-        const newColor = target.title || target.value;
-        this.props.dispatch(buildActions.changeButtonBackground({ color: newColor }));
+    handleBackgroundColorChange(color: { hex: string }) {
+        this.props.updateBackgroundColor(color.hex);
     }
 
     render() {
         return (
             <div className="editor">
-                <h3>Pick a background color</h3>
+                <p className="editor__bg">Background color</p>
                 <TwitterPicker 
                 color={this.props.color} 
                 onChangeComplete={this.handleBackgroundColorChange.bind(this)} 
                 />
-                <p>{this.props.color}</p>
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    console.log(state)
     return {
-        color: state?.buildReducer?.color?.color
+        color: state?.buildReducer?.color
     }
 }
 
-export default connect(mapStateToProps)(Editor);
+function mapDispatchToProps(dispatch) {
+    return {
+        updateBackgroundColor: (color: string) => dispatch(buildActions.changeButtonBackground(color))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);

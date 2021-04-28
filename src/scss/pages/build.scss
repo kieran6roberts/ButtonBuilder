@@ -1,3 +1,4 @@
+@use "../utils/mixins.scss" as m;
 @import "../layout/index.scss";
 @import "../components/button.scss";
 @import "../components/editor.scss";
@@ -5,6 +6,7 @@
 .build {
   &__container {
     height: 700px;
+    padding: 0 var(--space-md);
 
     @media only screen and (min-width: "900px") {
       display: grid;
@@ -15,19 +17,35 @@
 
   &__editor,
   &__output {
-    border: var(--border-thin-primary);
     height: 100%;
   }
 
   &__output {
     align-items: center;
-    display: flex;
-    justify-content: center;
+    border-radius: var(--border-radius-half);
+    display: grid;
   }
 
-  &__editor-heading {
-    font-weight: 500;
-    margin-top: var(--space-xs);
-    text-align: center;
+  &__output-btns {
+    display: flex;
+    justify-content: center;
+
+    & > button {
+      margin: 0 var(--space-xs);
+    }
+  }
+
+  &__output-save {
+    align-self: flex-end;
+    justify-self: center;
+    @include m.link-common;
+    @include m.link-primary;
+    &:hover {
+      @include m.link-primary-hover;
+    }
+  }
+
+  &__editor {
+    padding: var(--space-sm);
   }
 }

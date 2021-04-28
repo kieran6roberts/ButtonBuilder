@@ -8,7 +8,15 @@ const BuildPage = () => (
         <section className="build">
             <div className="build__container">
                 <div className="build__output">
-                    <Button styles={{ text: "button" }}/>
+                    <Button />
+                    <div className="build__output-btns">
+                        <button aria-label="Save this button" className="build__output-save">
+                            Save
+                        </button>
+                        <button aria-label="Reset this button" className="build__output-save">
+                            Reset
+                        </button>
+                    </div>
                 </div>
                 <div className="build__editor">
                     <h2 className="build__editor-heading">Editor</h2>

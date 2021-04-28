@@ -1,8 +1,9 @@
 .button-output {
+  align-self: flex-end;
+  justify-self: center;
   background-color: var(--color-bg);
-  font-size: var(--text-md);
   cursor: pointer;
-  border: var(--border-thin-tertiary);
+  font-size: var(--text-md);
   padding: var(--space-xs) var(--space-md);
   text-transform: capitalize;
 }

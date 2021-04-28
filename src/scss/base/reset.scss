@@ -19,6 +19,33 @@ html {
   font-family: var(--font);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--text-xl);
+}
+
+h2 {
+  font-size: var(--text-md);
+}
+
+h3 {
+  font-size: var(--text-sm);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--text-xs);
+}
+
 p,
 a,
 span {
@@ -27,4 +54,8 @@ span {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
