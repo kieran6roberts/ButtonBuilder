@@ -1,0 +1,14 @@
+@use "../utils/mixins.scss" as m;
+
+.button-wrapper {
+  @include m.flex;
+  border: 1px solid black;
+  height: 50vh;
+  max-width: 500px;
+  position: relative;
+  width: 100%;
+}
+
+.button-output {
+  align-self: center !important;
+}

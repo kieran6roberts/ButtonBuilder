@@ -30,3 +30,11 @@
 @mixin link-secondary-hover {
   background-color: var(--color-off-bg);
 }
+
+// Placings
+
+@mixin flex($align: center, $justify: center) {
+  align-items: $align;
+  display: flex;
+  justify-content: $justify;
+}

@@ -19,6 +19,10 @@ html {
   font-family: var(--font);
 }
 
+body {
+  overflow-y: scroll;
+}
+
 h1,
 h2,
 h3,

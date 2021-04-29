@@ -6,15 +6,13 @@ import * as buildActions from "../../redux/actions/buildActions";
 
 interface EditorProps {
     color: string;
-    dispatch?: (input: any) => void;
+}
+
+interface EditorActionProps {
     updateBackgroundColor: (color: string) => void;
 }
 
-class Editor extends React.Component<EditorProps> {
-    constructor(props) {
-        super(props);
-    }
-
+class Editor extends React.Component<EditorProps & EditorActionProps> {
     componentDidMount() {
         this.props.updateBackgroundColor(this.props.color ?? "fff");
     }

@@ -5,13 +5,14 @@
 
 .build {
   &__container {
-    height: 700px;
+    display: grid;
+    row-gap: var(--space-xl);
     padding: 0 var(--space-md);
 
     @media only screen and (min-width: "900px") {
-      display: grid;
       grid-template-columns: 1fr 2fr;
-      height: 350px;
+      row-gap: 0;
+      height: 50vh;
     }
   }
 
@@ -24,11 +25,22 @@
     align-items: center;
     border-radius: var(--border-radius-half);
     display: grid;
+    order: 2;
+    margin-bottom: var(--space-xl);
+
+    @media only screen and (min-width: "900px") {
+      order: 1;
+    }
   }
 
   &__output-btns {
     display: flex;
     justify-content: center;
+    margin-top: var(--space-2xl);
+
+    @media only screen and (min-width: "900px") {
+      margin-top: 0;
+    }
 
     & > button {
       margin: 0 var(--space-xs);
@@ -38,7 +50,7 @@
   &__output-save {
     align-self: flex-end;
     justify-self: center;
-    width: 10rem;
+    width: 9rem;
     @include m.link-common;
     @include m.link-primary;
 
@@ -54,6 +66,12 @@
   }
 
   &__editor {
-    padding: var(--space-sm);
+    order: 1;
+    padding: var(--space-sm) var(--space-xl);
+
+    @media only screen and (min-width: "900px") {
+      border-left: var(--border-thick-primary);
+      order: 2;
+    }
   }
 }

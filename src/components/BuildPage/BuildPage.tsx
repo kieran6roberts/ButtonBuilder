@@ -15,18 +15,19 @@ interface BuildPageState {
 }
 
 class BuildPage extends React.Component<BuilPageProps, BuildPageState> {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isSaveDisabled: false
-        }
+
+    state = {
+        isSaveDisabled: false
+    }
+
+    getLocalStorage() {
+        const currentStorage = localStorage.getItem("buttons");
+        return currentStorage ? JSON.parse(currentStorage) : [];
     }
 
     componentDidMount() {
-        const currentStorage = localStorage.getItem("buttons");
-        const parsedStorage = currentStorage ? JSON.parse(currentStorage) : null;
-        
-        this.setState({ ...this.state, isSaveDisabled: parsedStorage?.length >= 9 ? true : false })
+        const storage = this.getLocalStorage();
+        this.setState({ ...this.state, isSaveDisabled: storage?.length >= 9 ? true : false })
     }
     
     handleStyleReset() {
@@ -34,16 +35,19 @@ class BuildPage extends React.Component<BuilPageProps, BuildPageState> {
     }
 
     handleButtonSave() {
-        const currentStorage = localStorage.getItem("buttons");
-        const parsedStorage = currentStorage ? JSON.parse(currentStorage) : null;
+        const storage = this.getLocalStorage();
+        const item = {
+            id: storage.length + 1,
+            color: this.props.color
+        }
         
-        if (!parsedStorage || parsedStorage.length === 0) {
-            localStorage.setItem("buttons", JSON.stringify([{ color: this.props.color}]));
-        } else if (parsedStorage.length <= 9) {
-            localStorage.setItem("buttons", JSON.stringify([...parsedStorage, { color: this.props.color}]));
+        if (storage.length === 0) {
+            localStorage.setItem("buttons", JSON.stringify([item]));
+        } else if (storage.length <= 9) {
+            localStorage.setItem("buttons", JSON.stringify([...storage, item]));
         }
 
-        this.setState({...this.state, isSaveDisabled: parsedStorage?.length >= 9 ? true : false })
+        this.setState({...this.state, isSaveDisabled: storage?.length >= 9 ? true : false })
     }
     
     render() {

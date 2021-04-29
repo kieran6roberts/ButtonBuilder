@@ -1,1 +1,42 @@
+@use "../utils/mixins.scss" as m;
 @import "../layout/index.scss";
+@import "../components/button-wrapper.scss";
+@import "../components/button.scss";
+
+.my-buttons {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding: var(--space-sm);
+
+  &__delete {
+    cursor: pointer;
+    font-size: var(--text-md);
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    transform: scale(1);
+    transition: transform 50ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__none {
+    font-size: var(--text-md);
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  &__link-build {
+    @include m.link-common;
+    @include m.link-primary;
+    @include m.link-primary-hover;
+    display: block;
+    margin: auto;
+    width: max-content;
+  }
+}
